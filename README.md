@@ -138,8 +138,8 @@ compilers: {
 Do not use the [Old depreacted zipped starter code](https://s3.amazonaws.com/video.udacity-data.com/topher/2019/January/5c51c4c0_project-5-starter-code/project-5-starter-code.zip)
 
 ## ERC-721
-1. Token Name: 
-2. Token Symbol
+1. Token Name: StarNotaryCoin
+2. Token Symbol: SNC
 
 ## Rinkeby Test Network
 1. https://rinkeby.infura.io/v3/3bc0da104e35493bb779e24ea2da361e
