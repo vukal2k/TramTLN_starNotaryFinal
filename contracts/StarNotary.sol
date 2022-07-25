@@ -48,7 +48,7 @@ contract StarNotary is ERC721 {
         uint256 starCost = starsForSale[_tokenId];
         address ownerAddress = ownerOf(_tokenId);
         require(msg.value > starCost, "You need to have enough Ether");
-        transferFrom(ownerAddress, msg.sender, _tokenId); // We can't use _addTokenTo or_removeTokenFrom functions, now we have to use _transferFrom
+        _transfer(ownerAddress, msg.sender, _tokenId); // We can't use _addTokenTo or_removeTokenFrom functions, now we have to use _transferFrom
         address payable ownerAddressPayable = _make_payable(ownerAddress); // We need to make this conversion to be able to use transfer() function to transfer ethers
         ownerAddressPayable.transfer(starCost);
         if(msg.value > starCost) {
@@ -73,8 +73,8 @@ contract StarNotary is ERC721 {
         address owner1 = ownerOf(_tokenId1);
         address owner2 = ownerOf(_tokenId2);
         //4. Use _transferFrom function to exchange the tokens.
-        transferFrom(owner1, owner2, _tokenId1);
-        transferFrom(owner2, owner1, _tokenId2);
+        _transfer(owner1, owner2, _tokenId1);
+        _transfer(owner2, owner1, _tokenId2);
     }
 
     // Implement Task 1 Transfer Stars
